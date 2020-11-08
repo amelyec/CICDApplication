@@ -1,5 +1,4 @@
 language: java
-sudo: true
 jdk:
   - openjdk11
   
@@ -9,6 +8,6 @@ before_install:
   - chmod +x mvnw
  
 script:
-  - ./mvnw clean install | bash
-  - ./mvnw deploy jib:build -P deploy-docker | bash
+  - ./mvnw clean install
+  - ./mvnw deploy jib:build -P deploy-docker
  
