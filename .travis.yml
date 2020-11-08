@@ -8,6 +8,8 @@ before_install:
   - chmod +x mvnw
  
 script:
-  - ./mvnw clean install
+  - ./mvnw clean org.jacoco:jacoco-maven-plugin:prepare-agent install
   - ./mvnw deploy jib:build -P deploy-docker
- 
+  
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
