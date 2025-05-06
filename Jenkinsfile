@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        JAVA_HOME = tool name: 'JDK 1.8', type: 'jdk'
+        JAVA_HOME = tool name: 'Java 8', type: 'jdk'
         PATH = "${JAVA_HOME}/bin:${env.PATH}"
 
         DOCKER_HUB_USERNAME = 'werelay' // Your Docker Hub username
